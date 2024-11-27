@@ -1,4 +1,4 @@
-#👩‍🔬 About Me
+# 👩‍🔬 About Me
 
 Hi there! I am a final-year PhD candidate in [Computer Vision at the Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI)](https://mbzuai.ac.ae/research/department/computer-vision-department/), working under the guidance of Dr. [Dwarikanath Mahapatra](https://scholar.google.com/citations?user=j5K7HPoAAAAJ&hl=en) and Dr. [Mohammad Yaqub](https://scholar.google.co.uk/citations?user=9dfn5GkAAAAJ). My research focuses on developing robust vision-language models (VLMs) for healthcare, with a specific interest in domain generalization and out-of-distribution learning.
 
