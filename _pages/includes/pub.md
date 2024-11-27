@@ -85,7 +85,7 @@ Maryam Nadeem<sup>#</sup>, <b>Raza Imam<sup>*</sup></b>, Rouqaiah Al-Refai<sup>*
 </div>
 </div> -->
 
-
+<!--
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Elsevier JKSU</div><img src='images/RAZA_abe_survey.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
