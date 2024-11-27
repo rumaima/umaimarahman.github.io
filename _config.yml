@@ -12,7 +12,7 @@ repository               : "rumaima/umaimarahman.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
-google_analytics_id      : ""
+google_analytics_id      : # ""
 
 # SEO Related
 google_site_verification : ""
@@ -51,7 +51,7 @@ author:
   stackoverflow    : # http://stackoverflow.com/users/123456/username
   steam            :
   tumblr           :
-  twitter          : # "razaimam45"
+  twitter          : # ""
   vine             :
   weibo            :
   xing             :
