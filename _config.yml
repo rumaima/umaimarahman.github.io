@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Raza Imam"
+title                    : "Umaima Rahman"
 description              : "PhD Candidate at MBZUAI"
-repository               : "Razaimam45/razaimam45.github.io"
+repository               : "rumaima/umaimarahman.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,8 +21,8 @@ baidu_site_verification  : ""
 
 # Site Author
 author:
-  name             : "Raza Imam"
-  avatar           : "images/RAZA_dp2.jpeg"
+  name             : "Umaima Rahman"
+  avatar           : "images/Umaima_dp_github.png"
   bio              : #"ETH Zurich"
   location         : "Abu Dhabi, United Arab Emirates"
   employer         :
