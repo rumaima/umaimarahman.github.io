@@ -1,22 +1,15 @@
-# 🧐 About Me
+#👩‍🔬 About Me
 
-Hi there! I am a first year PhD. candidate in [Computer Vision at the Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI)](https://mbzuai.ac.ae/research/department/computer-vision-department/). I completed my MS in [Machine Learning at MBZUAI](https://mbzuai.ac.ae/research/department/machine-learning-department/) under the supervision of Dr. [Karthik Nandakumar](https://www.sprintai.org/nkarthik) and Dr. [Mohammad Yaqub](https://scholar.google.co.uk/citations?user=9dfn5GkAAAAJ).
-<!-- I completed my bachelor's degree in [Computer Science at Aligarh Muslim University](https://www.amu.ac.in/department/computer-science) in July 2022, advised by Dr. [Faisal Anwer](https://scholar.google.com/citations?user=S-VW0mAAAAAJ&hl=en) and Dr. [Mohammad Nadeem](https://scholar.google.com/citations?user=yaEgXYMAAAAJ&hl=en). -->
+Hi there! I am a final-year PhD candidate in [Computer Vision at the Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI)](https://mbzuai.ac.ae/research/department/computer-vision-department/), working under the guidance of Dr. [Dwarikanath Mahapatra](https://scholar.google.com/citations?user=j5K7HPoAAAAJ&hl=en) and Dr. [Mohammad Yaqub](https://scholar.google.co.uk/citations?user=9dfn5GkAAAAJ). My research focuses on developing robust vision-language models (VLMs) for healthcare, with a specific interest in domain generalization and out-of-distribution learning.
 
+Previously, I interned at the [Inception Institute of AI (G42)](https://www.g42.ai/), where I developed adaptive solutions for healthcare applications using VLMs and built a Gradio web app for generating customized medical summaries. I have also worked with Omdena, IBM, and Bose Institute in various roles, contributing to machine learning model development, automation, and bioinformatics research.
 
-<!-- Previously, I interned at Sony AI for half a year, focusing on AI security and model compression. Before that, I also interned at Tencent Youtu Lab for one year, exploring federated learning and adversarial attacks. -->
+**Research Interests**: I am passionate about improving the real-world applicability of AI in healthcare. My work spans:
+- **Domain Generalization**: Disentangled representation learning and multi-modal adaptation.
+- **Model Robustness**: Test-time adaptation and handling distributional shifts.
+- **Healthcare Applications**: Medical image classification, segmentation, and decision support systems.
+- **Efficient AI**: Techniques for leveraging lightweight and scalable AI models.
 
-<!-- **Research Interests**: I am mainly interested in data-centric AI or data-driven machine learning, including data privacy, data security, data efficiency, and data-related applications. My research investigates how to elevate data-centric approaches to improving the performance of machine learning models. Previously, I focused on the following research topics:
-- Data Efficiency: Data-Free Knowledge Distillation, Dataset Condensation
-- Data Security: Adversarial Examples, Model Inversion
-- Data Privacy: Membership Inference Attack
-- Data-related Applications: Federated Learning, Imbalanced Learning, Continual Learning -->
+I have several peer-reviewed publications, including works presented at MLHC, EUVIP. Beyond academics, I have partcipated in multiple innovation and AI hackathons, demonstrating my drive for creating impactful solutions.
 
-**Research Interests**: I am mainly interested in model-centric AI and data-centric machine learning, including data privacy, model robustness, domain generalization, and healthcare related applications. My research investigates how to elevate data-centric approaches to improving the performance of machine learning models. Currently, I am securing large vision models (LVMs) so that they can be relied upon for effective real-world deployment. Previously, I focused on the following research topics:
-- Data Efficiency: Knowledge Distillation, Distribution Alignment
-- Data Security: Adversarial Training, Model Extraction Attack
-- Domain Generalization: Ensembling, Zero-shot Generalization 
-- Healthcare-related Applications: Federated Learning, Imbalanced Learning
-
-🤔 For my MS thesis, I explored the aspects of domain generalization at test time, without any additional model training or fine-tuning, associated with in-domain, out-domain, and cross-domain data, particularly zero-shot generalization of large vision models like CLIP.
-
+Feel free to connect with me as I strive to advance healthcare through innovative AI!
