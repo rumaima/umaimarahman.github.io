@@ -1,4 +1,4 @@
-
+<!--
 # 📝 Selected Publications 
 
 <style>
@@ -101,3 +101,4 @@ Maryam Nadeem<sup>#</sup>, <b>Raza Imam<sup>*</sup></b>, Rouqaiah Al-Refai<sup>*
 - <span style="color: blue; background-color: lightgray; "> ICLR 2023 </span>&nbsp;[IDEAL: Query-Efficient Data-Free Learning from Black-Box Models](https://openreview.net/pdf?id=ConT6H7MWL), **Jie Zhang<sup>*</sup>**, Chen Chen<sup>*</sup>, Lingjuan Lyu. <a href="https://github.com/SonyResearch/IDEAL">code</a> 
 - <span style="color: blue; background-color: lightgray; "> Best Student Paper Award, AAAI 2022 FL workshop </span>&nbsp;[GEAR: A Margin-based Federated Adversarial Training Approach](https://federated-learning.org/fl-aaai-2022/Papers/FL-AAAI-22_paper_34.pdf), Chen Chen<sup>*</sup>, **Jie Zhang**<sup>*</sup>, Lingjuan Lyu.  -->
 
+-->
