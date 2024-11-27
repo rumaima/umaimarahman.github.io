@@ -2,8 +2,8 @@
 
 <style>
   .scrollable {
-    max-height: 260px; 
-    overflow-y: scroll; 
+    max-height: 260px; /* 设置最大高度 */
+    overflow-y: scroll; /* 设置垂直滚动条 */
   }
 </style>
 
