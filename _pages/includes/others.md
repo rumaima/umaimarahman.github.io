@@ -10,7 +10,7 @@
 }
 </style>
 
-# 📖 Educations
+# 📖 Education
 - <sup>&#x1F393;</sup>  *2021.08 - Present*, PhD in Computer Vision, Mohamed Bin Zayed University of Artificial Intelligence, Abu Dhabi, UAE.
 - <sup>&#x1F393;</sup>  *2017.08 - 2019.06*, Masters (M.Tech.) in Computer Science and Engineering, University of Calcutta, Kolkata, India.
 - <sup>&#x1F393;</sup>  *2015.08 - 2017.06*, Masters (M.Sc.) in Computer Science, University of Calcutta, Kolkata, India.
