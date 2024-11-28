@@ -24,7 +24,7 @@ redirect_from:
 
 <footer> 
   <hr>
-<p>Last updated on：<span id="date"></span> . Acknowleding <a href="[https://razaimam45.github.io/](Razaimam45)">webpage</a></p>
+<p>Last updated on：<span id="date"></span> Acknowleding <a href="[https://razaimam45.github.io/](Razaimam45)"> Razaimam45's webpage</a></p>
 
 <script>
     var today = new Date();
