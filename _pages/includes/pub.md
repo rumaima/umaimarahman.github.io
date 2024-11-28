@@ -29,7 +29,7 @@
 <div class='paper-box-text' markdown="1">
 
 [XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays]() \\
-<b>Umaima Rahman</b>, Asma Basu, Muhammad Usman Khattak, Arham Ullah Rahman.
+<b>Umaima Rahman</b>, Abhishek Basu, Muhammad Uzair Khattak, Aniq Ur Rahman.
 
 - A comprehensive study on cross-disease knowledge transfer capabilities in zero-shot chest X-ray classification.
 
@@ -40,7 +40,7 @@
 <div class='paper-box-text' markdown="1">
 
 [MRIShift: Disentangled Representation Learning for 3D MRI Lesion Segmentation under Distributional Shifts]() \\
-<b>Umaima Rahman</b>, George Chen, Kun Zhang.
+<b>Umaima Rahman</b>, Guangyi Chen, Kun Zhang.
 
 - Novel approach for handling distributional shifts in 3D MRI lesion segmentation using disentangled representation learning.
 
@@ -51,7 +51,7 @@
 <div class='paper-box-text' markdown="1">
 
 [Obstructive pulmonary disease prediction through heart structure analysis](https://link.springer.com/chapter/10.1007/978-981-13-9042-5_10) \\
-<b>Umaima Rahman</b>, P. Bhattacharya, S. Saha.
+<b>Umaima Rahman</b>, P. Bhattacharya, Sudipto Saha.
 
 - Innovative method for predicting obstructive pulmonary disease by analyzing heart structure characteristics.
 
