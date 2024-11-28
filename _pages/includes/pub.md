@@ -1,6 +1,6 @@
 # 📝 Selected Publications 
 
-#(<sup>*</sup> indicates equal contribution;  <sup>#</sup> indicates corresponding authorship.)
+<!--(<sup>*</sup> indicates equal contribution;  <sup>#</sup> indicates corresponding authorship.)-->
 
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div></div></div>
 <div class='paper-box-text' markdown="1">
