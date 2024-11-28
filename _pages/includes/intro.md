@@ -5,7 +5,7 @@ Hi there! I am a final-year PhD candidate in [Computer Vision at the Mohamed Bin
 Previously, I interned at the [Inception Institute of AI (G42)](https://www.g42.ai/), where I developed adaptive solutions for healthcare applications using VLMs and built a Gradio web app for generating customized medical summaries. I have also worked with Omdena, IBM, and Bose Institute in various roles, contributing to machine learning model development, automation, and bioinformatics research.
 
 **Research Interests**: I am passionate about improving the real-world applicability of AI in healthcare. My work spans:
-- **Domain Generalization**: Disentangled representation learning and multi-modal adaptation.
+- **OOD Generalization**: Out-of-distribution generalisation through Disentangled representation learning and multi-modal adaptation.
 - **Model Robustness**: Test-time adaptation and handling distributional shifts.
 - **Healthcare Applications**: Medical image classification, segmentation, and decision support systems.
 - **Efficient AI**: Techniques for leveraging lightweight and scalable AI models.
