@@ -24,7 +24,7 @@ redirect_from:
 
 <footer> 
   <hr>
-<p>Last updated on：<span id="date"></span> . Acknowleding <a href="[https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io?style=social](https://razaimam45.github.io/)"></a></p>
+<p>Last updated on：<span id="date"></span> . Acknowleding <a href="[https://img.shields.io/github/stars/RayeRen/acad-homepage.github.io?style=social](https://razaimam45.github.io/)"></a> webpage</p>
 
 <script>
     var today = new Date();
