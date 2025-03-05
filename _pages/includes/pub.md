@@ -5,7 +5,7 @@
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div></div></div>
 <div class='paper-box-text' markdown="1">
 
-[DiMPLe - Disentangled Multi-Modal Prompt Learning: Enhancing Out-Of-Distribution Alignment with Invariant and Spurious Feature Separation]() \\
+[Disentangled Multi-Modal Prompt Learning: Enhancing Out-Of-Distribution Alignment with Invariant and Spurious Feature Separation]() \\
 <b>Umaima Rahman</b>, Mohammad Yaqub, Dwarikanath Mahapatra. 
 
 - A novel approach for enhancing out-of-distribution robustness in vision-language models through disentangled multi-modal prompt learning, separating invariant and spurious features.
@@ -14,7 +14,7 @@
 </div>
 -->
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Under Review</div></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ISBI 2025</div></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Can language-guided unsupervised adaptation improve medical image classification using unpaired images and texts?]() \\
@@ -25,7 +25,7 @@
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MLHC 2024</div></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">ML4H 2024</div></div></div>
 <div class='paper-box-text' markdown="1">
 
 [XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays]() \\
