@@ -10,6 +10,6 @@ Previously, I interned at the [Inception Institute of AI (G42)](https://www.g42.
 - **Healthcare Applications**: Medical image classification, segmentation, and decision support systems.
 - **Efficient AI**: Techniques for leveraging lightweight and scalable AI models.
 
-I have several peer-reviewed publications, including works presented at MLHC, EUVIP. Beyond academics, I have partcipated in multiple innovation and AI hackathons, demonstrating my drive for creating impactful solutions.
+I have several peer-reviewed publications, including works presented at ML4H, EUVIP. Beyond academics, I have partcipated in multiple innovation and AI hackathons, demonstrating my drive for creating impactful solutions.
 
 Feel free to connect with me as I strive to advance healthcare through innovative AI!
