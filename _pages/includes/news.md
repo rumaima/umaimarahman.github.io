@@ -9,7 +9,7 @@
 
 <div class="scrollable">
   <ul>
-    <li><strong>2024.08</strong>: 🎉  Presented the paper accepted at MLHC 2024: "XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays" held at University of Toronot, Toronot, Canada.</li>
+    <li><strong>2024.08</strong>: 🎉  Presented the paper accepted at ML4H 2024: "XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays" held at University of Toronot, Toronot, Canada.</li>
     <li><strong>2024.09</strong>: 🎉  Presented the paper accepted at EUVIP 2024: "MRIShift: Disentangled Representation Learning for 3D MRI Lesion Segmentation under Distributional Shifts" at Geneva University Hospita, Geneva, Switzerland.</li>
     <li><strong>2024.05</strong>: 🎉 Starting summer internship at Inception Institute of AI (G42), Abu Dhabi</li>
     <li><strong>2022.09</strong>: Selected as runner-up in SiemensWomenHackAI</li>
