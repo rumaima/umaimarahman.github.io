@@ -1,15 +1,15 @@
 # 👩‍🔬 About Me
+Hi there! I am currently a Postdoctoral Researcher at NYU Abu Dhabi with Dr. [Farah Shamout](https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html), working at the intersection of robust vision-language models (VLMs) and agentic systems for clinical decision support. My research focuses on building reliable, interpretable, and adaptive AI systems for high-stakes healthcare settings, with an emphasis on robustness, generalization, and real-world deployment.
 
-Hi there! I am a final-year PhD candidate in [Computer Vision at the Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI)](https://mbzuai.ac.ae/research/department/computer-vision-department/), working under the guidance of Dr. [Dwarikanath Mahapatra](https://scholar.google.com/citations?user=j5K7HPoAAAAJ&hl=en) and Dr. [Mohammad Yaqub](https://scholar.google.co.uk/citations?user=9dfn5GkAAAAJ). My research focuses on developing robust vision-language models (VLMs) for healthcare, with a specific interest in domain generalization and out-of-distribution learning.
+I completed my PhD in [Computer Vision at the Mohamed Bin Zayed University of Artificial Intelligence (MBZUAI)](https://mbzuai.ac.ae/research/department/computer-vision-department/), where I was advised by Dr. [Dwarikanath Mahapatra](https://www.ku.ac.ae/college-people/dwarikanath-mahapatra/) and Dr. [Mohammad Yaqub](https://mbzuai.ac.ae/study/faculty/mohammad-yaqub/). During my PhD, my work centered on domain generalization, out-of-distribution learning, and improving the robustness of multimodal models in healthcare.
 
-Previously, I interned at the [Inception Institute of AI (G42)](https://www.g42.ai/), where I developed adaptive solutions for healthcare applications using VLMs and built a Gradio web app for generating customized medical summaries. I have also worked with Omdena, IBM, and Bose Institute in various roles, contributing to machine learning model development, automation, and bioinformatics research.
+Previously, I interned at the Inception Institute of AI (G42), where I developed adaptive VLM-based solutions for healthcare and built interactive tools for generating customized medical summaries. I have also collaborated with organizations such as Omdena, IBM, and Bose Institute, contributing to projects spanning machine learning, automation, and bioinformatics.
 
-**Research Interests**: I am passionate about improving the real-world applicability of AI in healthcare. My work spans:
-- **OOD Generalization**: Out-of-distribution generalisation through Disentangled representation learning and multi-modal adaptation.
-- **Model Robustness**: Test-time adaptation and handling distributional shifts.
-- **Healthcare Applications**: Medical image classification, segmentation, and decision support systems.
-- **Efficient AI**: Techniques for leveraging lightweight and scalable AI models.
+**Research Interests:** My work is driven by the goal of making AI systems more reliable and meaningful in real-world clinical settings. Broadly, I focus on clinical decision support, medical imaging, and multimodal reasoning as well as:
+- **Robustness & Generalization:** Handling distribution shifts, OOD scenarios, and test-time adaptation in VLMs
+- **Agentic AI Systems:** Designing systems that can reason, interact, and assist in clinical workflows
+- **Trustworthy AI:** Bias, reliability, and interpretability in high-stakes environments
 
-I have several peer-reviewed publications, including works presented at ML4H, EUVIP. Beyond academics, I have partcipated in multiple innovation and AI hackathons, demonstrating my drive for creating impactful solutions.
+Beyond research, I am interested in the broader questions of ethics, purpose, and responsibility in AI, particularly how they intersect with knowledge traditions and real-world impact.
 
-Feel free to connect with me as I strive to advance healthcare through innovative AI!
+Feel free to connect if you’d like to collaborate or discuss ideas at the intersection of AI and healthcare!
