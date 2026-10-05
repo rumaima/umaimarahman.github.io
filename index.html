@@ -20,8 +20,6 @@
   --muted: #5a6475;
   --line: #dfe4ec;
   --accent: #2447b8;
-  --box: #d99a00;
-  --box-ink: #1a1405;
 }
 @media (prefers-color-scheme: dark) {
   :root {
@@ -31,8 +29,6 @@
     --muted: #9aa5b8;
     --line: #273246;
     --accent: #8fa8ff;
-    --box: #f2c14e;
-    --box-ink: #1a1405;
   }
 }
 * { box-sizing: border-box; }
@@ -45,86 +41,70 @@ body {
   font: 400 1.0625rem/1.65 "Source Serif 4", Georgia, serif;
   -webkit-font-smoothing: antialiased;
 }
-h1, h2, h3, nav, .tag, .venue, .when, .links a, .btn {
+h1, h2, h3, h4, nav, .venue, .when, .links a, summary {
   font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
 a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
-.wrap {
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: grid;
-  grid-template-columns: 300px 1fr;
-  gap: 72px;
-}
-
-/* Left column: identity */
-aside {
+/* Top navigation */
+nav {
   position: sticky;
   top: 0;
-  align-self: start;
-  padding: 56px 0 40px;
+  z-index: 10;
+  background: var(--paper);
+  border-bottom: 1px solid var(--line);
 }
-.figure {
-  position: relative;
-  width: 100%;
-  max-width: 260px;
-  margin: 18px 0 32px;
+nav ul {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 24px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
 }
-.figure img {
+nav a {
+  display: block;
+  padding: 12px 0;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .95rem;
+}
+nav a:hover { color: var(--ink); }
+
+.page { max-width: 880px; margin: 0 auto; padding: 0 24px 64px; }
+section { padding: 8px 0 40px; scroll-margin-top: 56px; }
+
+/* Header: intro left, photo right */
+header {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  gap: 40px;
+  align-items: start;
+  padding: 48px 0 32px;
+  scroll-margin-top: 56px;
+}
+h1 {
+  font-size: 2.8rem;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 8px;
+}
+.role { margin: 0 0 20px; color: var(--muted); font-size: 1rem; line-height: 1.45; }
+.lede { font-size: 1.25rem; line-height: 1.5; margin: 0 0 16px; }
+header p { margin: 0 0 14px; }
+.photo img {
   display: block;
   width: 100%;
   height: auto;
   aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 6px;
 }
-/* The bounding box: a detection annotation drawn over the portrait */
-.bbox {
-  position: absolute;
-  left: 33%;
-  top: 9%;
-  width: 28%;
-  height: 36%;
-  border: 2px solid var(--box);
-  pointer-events: none;
-}
-.bbox .tag {
-  position: absolute;
-  left: -2px;
-  bottom: 100%;
-  background: var(--box);
-  color: var(--box-ink);
-  font-size: .72rem;
-  font-weight: 600;
-  line-height: 1;
-  padding: 4px 6px 3px;
-  white-space: nowrap;
-}
-@media (prefers-reduced-motion: no-preference) {
-  .bbox { animation: draw .9s cubic-bezier(.2,.7,.2,1) .25s both; }
-  .bbox .tag { animation: fade .3s ease 1.05s both; }
-  @keyframes draw {
-    from { clip-path: inset(0 100% 100% 0); }
-    to { clip-path: inset(-30px -30px -30px -30px); }
-  }
-  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
-}
-
-h1 {
-  font-size: 2.6rem;
-  line-height: 1.05;
-  font-weight: 700;
-  letter-spacing: -.02em;
-  margin: 0 0 12px;
-}
-.role { margin: 0 0 4px; }
-.role, .place { color: var(--muted); font-size: .98rem; line-height: 1.45; }
-.place { margin: 0 0 24px; }
-.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; list-style: none; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0 0; padding: 0; list-style: none; }
 .links a {
   display: inline-block;
   font-size: .85rem;
@@ -137,71 +117,62 @@ h1 {
   border-radius: 999px;
 }
 .links a:hover { border-color: var(--accent); color: var(--accent); }
-nav ul { list-style: none; margin: 0; padding: 0; }
-nav a {
-  display: block;
-  padding: 3px 0;
-  color: var(--muted);
-  text-decoration: none;
-  font-size: .95rem;
-}
-nav a:hover { color: var(--ink); }
 
-/* Right column: content */
-main { padding: 56px 0 80px; min-width: 0; }
-section { padding: 8px 0 48px; scroll-margin-top: 24px; }
 h2 {
   font-size: 1.5rem;
   font-weight: 600;
   letter-spacing: -.01em;
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   padding-bottom: 10px;
   border-bottom: 1px solid var(--line);
 }
-.lede {
-  font-size: 1.35rem;
-  line-height: 1.5;
-  margin: 0 0 20px;
-  max-width: 34em;
+
+/* Research highlights */
+.themes { list-style: none; margin: 0; padding: 0; }
+.themes > li { margin-bottom: 20px; }
+.themes h3 { font-size: 1.1rem; font-weight: 600; margin: 0 0 4px; }
+.themes p { margin: 0 0 6px; }
+.themes ul { margin: 0; padding-left: 1.2em; }
+.themes ul li { margin-bottom: 4px; }
+.tagv {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
 }
-main p, main li { max-width: 40em; }
-main .news li, main .rows li { max-width: none; }
-.interests { padding-left: 1.1em; margin: 0 0 16px; }
-.interests li { margin-bottom: 6px; }
 
 /* News */
 .news { list-style: none; margin: 0; padding: 0; }
 .news li {
   display: grid;
   grid-template-columns: 84px 1fr;
-  gap: 16px;
-  padding: 9px 0;
-  border-top: 1px solid var(--line);
+  gap: 14px;
+  padding: 7px 0;
 }
-.news li:first-child { border-top: 0; }
 .when {
   color: var(--muted);
   font-size: .88rem;
   font-variant-numeric: tabular-nums;
   padding-top: 3px;
 }
-details summary {
-  cursor: pointer;
-  color: var(--accent);
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
-  font-size: .92rem;
-  margin-top: 12px;
-}
+details summary { cursor: pointer; color: var(--accent); font-size: .92rem; margin-top: 10px; }
 
 /* Publications */
+.year {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+  margin: 18px 0 4px;
+}
 .pub {
   display: grid;
-  grid-template-columns: 116px 1fr;
+  grid-template-columns: 128px 1fr;
   gap: 18px;
-  padding: 18px 0;
+  padding: 14px 0;
   border-top: 1px solid var(--line);
 }
-.pub:first-of-type { border-top: 0; padding-top: 4px; }
+.year + .pub { border-top: 0; }
 .venue {
   align-self: start;
   justify-self: start;
@@ -213,30 +184,20 @@ details summary {
   border-radius: 3px;
 }
 .venue small { display: block; font-weight: 400; color: var(--muted); }
-.pub h3 {
-  font-size: 1.08rem;
-  font-weight: 600;
-  line-height: 1.35;
-  margin: 0 0 6px;
-}
+.pub h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
 .pub h3 a { color: var(--ink); text-decoration: none; }
 .pub h3 a:hover { color: var(--accent); }
 .authors { margin: 0 0 6px; font-size: .97rem; color: var(--muted); }
 .authors b { color: var(--ink); font-weight: 600; }
-.summary { margin: 0; font-size: .97rem; }
+.summary { margin: 0; font-size: .95rem; }
 
-/* Timelines */
-.rows { list-style: none; margin: 0; padding: 0; }
-.rows li {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 16px;
-  padding: 10px 0;
-  border-top: 1px solid var(--line);
-}
-.rows li:first-child { border-top: 0; }
-.rows strong { font-weight: 600; }
-.rows span.sub { display: block; color: var(--muted); font-size: .95rem; }
+/* Tables for talks, experience, education, awards */
+table { width: 100%; border-collapse: collapse; }
+td { padding: 10px 0; border-top: 1px solid var(--line); vertical-align: top; }
+tr:first-child td { border-top: 0; }
+td.when { width: 128px; padding-right: 16px; }
+td strong { font-weight: 600; }
+td .sub { display: block; color: var(--muted); font-size: .95rem; }
 
 footer {
   border-top: 1px solid var(--line);
@@ -245,101 +206,128 @@ footer {
   font-size: .88rem;
 }
 
-@media (max-width: 860px) {
-  .wrap { grid-template-columns: 1fr; gap: 0; padding: 0 16px; }
-  aside { position: static; padding: 32px 0 8px; }
-  .figure { max-width: 200px; }
-  nav { display: none; }
-  main { padding-top: 24px; }
+@media (max-width: 720px) {
+  nav ul { padding: 0 16px; gap: 0 16px; flex-wrap: nowrap; overflow-x: auto; white-space: nowrap; }
+  nav a { padding: 10px 0; font-size: .9rem; }
+  .page { padding: 0 16px 48px; }
+  header { grid-template-columns: 1fr; gap: 20px; padding-top: 28px; }
+  .photo { order: -1; max-width: 160px; }
   h1 { font-size: 2.2rem; }
-  .lede { font-size: 1.2rem; }
-  .pub { grid-template-columns: 1fr; gap: 10px; }
-  .news li, .rows li { grid-template-columns: 1fr; gap: 2px; }
+  .lede { font-size: 1.15rem; }
+  .pub { grid-template-columns: 1fr; gap: 8px; }
+  .news li { grid-template-columns: 1fr; gap: 0; }
+  td.when { width: 92px; }
 }
 </style>
 </head>
 <body>
-<div class="wrap">
 
-<aside>
-  <div class="figure">
+<nav aria-label="Sections">
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#news">News</a></li>
+    <li><a href="#publications">Publications</a></li>
+    <li><a href="#talks">Talks</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#awards">Awards</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+<header id="home">
+  <div>
+    <h1>Umaima Rahman</h1>
+    <p class="role">Postdoctoral Associate, Clinical AI Lab, New York University Abu Dhabi</p>
+    <p class="lede">👩‍💻 I build AI systems that can be trusted by clinicians: vision-language models that know where things are in a scan 🩻, and agents that can reason over a patient stay 🏥.</p>
+    <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. 🎓 I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Mohammad Yaqub and Dr. Dwarikanath Mahapatra, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
+    <p>Before my PhD I interned at the Inception Institute of AI (G42) and worked at IBM. 🤝 I am happy to talk about collaborations at the intersection of AI and healthcare!</p>
+    <ul class="links">
+      <li><a href="mailto:ur2068@nyu.edu">Email</a></li>
+      <li><a href="https://scholar.google.com/citations?user=nTZQZ0EAAAAJ&amp;hl=en">Google Scholar</a></li>
+      <li><a href="https://github.com/rumaima">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/umaima-rahman-ai">LinkedIn</a></li>
+    </ul>
+  </div>
+  <div class="photo">
     <img src="images/portrait.jpg" alt="Portrait of Umaima Rahman" width="720" height="720">
   </div>
-  <h1>Umaima Rahman</h1>
-  <p class="role">Postdoctoral Associate, Clinical AI Lab</p>
-  <p class="place">New York University Abu Dhabi</p>
-  <ul class="links">
-    <li><a href="mailto:ur2068@nyu.edu">Email</a></li>
-    <li><a href="https://scholar.google.com/citations?user=nTZQZ0EAAAAJ&amp;hl=en">Google Scholar</a></li>
-    <li><a href="https://github.com/rumaima">GitHub</a></li>
-    <li><a href="https://www.linkedin.com/in/umaima-rahman-ai">LinkedIn</a></li>
-  </ul>
-  <nav aria-label="Sections">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#news">News</a></li>
-      <li><a href="#publications">Publications</a></li>
-      <li><a href="#talks">Talks</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#awards">Awards</a></li>
-    </ul>
-  </nav>
-</aside>
+</header>
 
-<main>
-
-<section id="about">
-  <p class="lede">👩‍💻 I build AI systems that can be trusted by clinicians: vision-language models that know where things are in a scan 🩻, and agents that can reason over a patient stay 🏥.</p>
-  <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. 🎓 I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Mohammad Yaqub and Dr. Dwarikanath Mahapatra, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
-  <p>🔬 My current work focuses on:</p>
-  <ul class="interests">
-    <li>📍 <strong>Spatial understanding in medical VLMs.</strong> Benchmarks and metrics for whether models can localize findings in chest X-rays and CT volumes, not just name them.</li>
-    <li>🤖 <strong>Agents for ICU decision support.</strong> Long-context management for LLM agents that read entire ICU stays from MIMIC-IV, and multi-agent systems that combine EHR and imaging.</li>
-    <li>🛡️ <strong>Robustness and generalization.</strong> Distribution shift, zero-shot transfer, and test-time adaptation in vision-language models.</li>
+<section id="research">
+  <h2>🔬 Research highlights</h2>
+  <ul class="themes">
+    <li>
+      <h3>📍 Spatial understanding in medical VLMs</h3>
+      <p>Benchmarks and metrics for whether models can localize findings in chest X-rays and CT volumes, not just name them.</p>
+      <ul>
+        <li><a href="https://arxiv.org/abs/2605.08787">Lost in Volume: The CT-SpatialVQA Benchmark</a> <span class="tagv">MICCAI 2026, Oral</span></li>
+        <li>CheXSpatialVQA <span class="tagv">ECCV Workshop 2026</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>🤖 Agents for ICU decision support</h3>
+      <p>Long-context management for LLM agents that read entire ICU stays from MIMIC-IV, and multi-agent systems that combine EHR and imaging.</p>
+      <ul>
+        <li>Long Context Is Not Enough: An Empirical Case for Dynamic Context Management in ICU Agents <span class="tagv">NeurIPS Workshop 2026</span></li>
+      </ul>
+    </li>
+    <li>
+      <h3>🛡️ Robustness and generalization</h3>
+      <p>Distribution shift, zero-shot transfer, and test-time adaptation in vision-language models.</p>
+      <ul>
+        <li><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=nTZQZ0EAAAAJ&amp;citation_for_view=nTZQZ0EAAAAJ:YsMSGLbcyi4C">DiMPLE: Disentangled Multi-Modal Prompt Learning</a> <span class="tagv">ICCV 2025</span></li>
+        <li><a href="https://openreview.net/forum?id=TT9tAH1XBW">DRiFt: Decoupling Clinical and Class-Agnostic Features</a> <span class="tagv">MICCAI Workshop 2025</span></li>
+        <li><a href="https://arxiv.org/abs/2408.11493">XDT-CXR: Cross-Disease Transferability in Zero-Shot CXR Classification</a> <span class="tagv">MLHC 2024</span></li>
+      </ul>
+    </li>
   </ul>
-  <p>Before my PhD I interned at the Inception Institute of AI (G42) and worked at IBM. 🤝 I am happy to talk about collaborations at the intersection of AI and healthcare!</p>
 </section>
 
 <section id="news">
   <h2>📰 News</h2>
   <ul class="news">
-    <li><span class="when">2026.10</span><span>🎤 Invited talk at the University of Washington, Department of Biomedical Informatics and Medical Education: <em>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</em>.</span></li>
-    <li><span class="when">2026.09</span><span>🇸🇪 Presented CheXSpatialVQA at ECCV 2026 in Malmö, Sweden.</span></li>
-    <li><span class="when">2026.09</span><span>🌟 CT-SpatialVQA selected for an Oral Presentation at MICCAI 2026 in Strasbourg, France.</span></li>
-    <li><span class="when">2026.07</span><span>📚 Attended the Oxford Machine Learning Summer School (OxML), MLx Health &amp; Bio track.</span></li>
-    <li><span class="when">2026.05</span><span>🎉 CT-SpatialVQA early-accepted at MICCAI 2026.</span></li>
+    <li><span class="when">10/2026</span><span>🎤 Invited talk at the University of Washington, Department of Biomedical Informatics and Medical Education: <em>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</em>.</span></li>
+    <li><span class="when">09/2026</span><span>🇸🇪 Presented CheXSpatialVQA at <strong>ECCV 2026</strong> in Malmö, Sweden.</span></li>
+    <li><span class="when">09/2026</span><span>🌟 CT-SpatialVQA selected for an Oral Presentation at <strong>MICCAI 2026</strong> in Strasbourg, France.</span></li>
+    <li><span class="when">07/2026</span><span>📚 Attended the Oxford Machine Learning Summer School (OxML), MLx Health &amp; Bio track.</span></li>
+    <li><span class="when">05/2026</span><span>🎉 CT-SpatialVQA early-accepted at <strong>MICCAI 2026</strong>.</span></li>
     <li><span class="when">2025</span><span>🏛️ Joined the Clinical AI Lab at NYU Abu Dhabi as a Postdoctoral Associate.</span></li>
-    <li><span class="when">2025.05</span><span>🌺 Presented DiMPLe at ICCV 2025 in Hawaii, USA.</span></li>
-    <li><span class="when">2025.05</span><span>📰 Featured in <a href="https://gulfnews.com/uae/abu-dhabi-heres-how-mbzuais-indian-phd-student-is-solving-a-major-problem-in-medical-ai-1.500148227">Gulf News</a> for my PhD work.</span></li>
-    <li><span class="when">2025.05</span><span>🇪🇸 Attended the ADIA Lab Explainable AI Summer School in Granada, Spain.</span></li>
-    <li><span class="when">2025.05</span><span>🎓 Completed my PhD in Computer Vision at MBZUAI.</span></li>
-    <li><span class="when">2025</span><span>✅ DRiFt accepted at MICCAI 2025 and language-guided adaptation paper accepted at ISBI 2025.</span></li>
+    <li><span class="when">05/2025</span><span>🌺 Presented DiMPLe at <strong>ICCV 2025</strong> in Hawaii, USA.</span></li>
+    <li><span class="when">05/2025</span><span>📰 Featured in <a href="https://gulfnews.com/uae/abu-dhabi-heres-how-mbzuais-indian-phd-student-is-solving-a-major-problem-in-medical-ai-1.500148227">Gulf News</a> for my PhD work.</span></li>
+    <li><span class="when">05/2025</span><span>🇪🇸 Attended the ADIA Lab Explainable AI Summer School in Granada, Spain.</span></li>
+    <li><span class="when">05/2025</span><span>🎓 Completed my PhD in Computer Vision at MBZUAI.</span></li>
+    <li><span class="when">2025</span><span>✅ DRiFt accepted at <strong>MICCAI 2025</strong> and language-guided adaptation paper accepted at <strong>ISBI 2025</strong>.</span></li>
   </ul>
   <details>
     <summary>Earlier news</summary>
     <ul class="news">
-      <li><span class="when">2024.09</span><span>🇨🇦 Presented XDT-CXR at MLHC 2024, Toronto, Canada.</span></li>
-      <li><span class="when">2024.09</span><span>🇨🇭 Presented MRIShift at EUVIP 2024, Geneva, Switzerland.</span></li>
-      <li><span class="when">2024.08</span><span>✅ XDT-CXR accepted at MLHC 2024.</span></li>
-      <li><span class="when">2024.05</span><span>💼 Started a summer internship at the Inception Institute of AI (G42), Abu Dhabi, UAE.</span></li>
-      <li><span class="when">2022.09</span><span>🏆 First runner-up at SiemensWomenHackAI.</span></li>
-      <li><span class="when">2021.08</span><span>🚀 Started my PhD in Computer Vision at MBZUAI.</span></li>
-      <li><span class="when">2020.01</span><span>💻 Joined IBM as an Associate Systems Engineer in Bengaluru, India.</span></li>
+      <li><span class="when">09/2024</span><span>🇨🇦 Presented XDT-CXR at <strong>MLHC 2024</strong>, Toronto, Canada.</span></li>
+      <li><span class="when">09/2024</span><span>🇨🇭 Presented MRIShift at <strong>EUVIP 2024</strong>, Geneva, Switzerland.</span></li>
+      <li><span class="when">08/2024</span><span>✅ XDT-CXR accepted at <strong>MLHC 2024</strong>.</span></li>
+      <li><span class="when">05/2024</span><span>💼 Started a summer internship at the Inception Institute of AI (G42), Abu Dhabi, UAE.</span></li>
+      <li><span class="when">09/2022</span><span>🏆 First runner-up at SiemensWomenHackAI.</span></li>
+      <li><span class="when">08/2021</span><span>🚀 Started my PhD in Computer Vision at MBZUAI.</span></li>
+      <li><span class="when">01/2020</span><span>💻 Joined IBM as an Associate Systems Engineer in Bengaluru, India.</span></li>
     </ul>
   </details>
 </section>
 
 <section id="publications">
-  <h2>Publications</h2>
+  <h2>📝 Publications</h2>
 
-    <article class="pub">
+  <h4 class="year">2026</h4>
+
+  <article class="pub">
     <span class="venue">NeurIPS-Workshop<small>2026, LCFM</small></span>
     <div>
       <!-- TODO: add full author list and arXiv link once uploaded -->
       <h3>Long Context Is Not Enough: An Empirical Case for Dynamic Context Management and Reasoning in ICU Clinical Decision-Support Agents</h3>
       <p class="authors"><b>Umaima Rahman</b>, et al.</p>
-            <p class="summary">On MIMIC-IV, serialized ICU stays grow near-linearly with length of stay and spread across 1,300+ chart variables, so fixed windows and curated subsets discard most of the record. Feeding an LLM more raw context zero-shot does not improve mortality prediction, which makes the case for active context management in ICU agents.</p> </div>
+      <p class="summary">On MIMIC-IV, serialized ICU stays grow near-linearly with length of stay and spread across 1,300+ chart variables, so fixed windows and curated subsets discard most of the record. Feeding an LLM more raw context zero-shot does not improve mortality prediction, which makes the case for active context management in ICU agents.</p>
+    </div>
   </article>
 
   <article class="pub">
@@ -361,7 +349,9 @@ footer {
     </div>
   </article>
 
-    <article class="pub">
+  <h4 class="year">2025</h4>
+
+  <article class="pub">
     <span class="venue">ICCV<small>2025</small></span>
     <div>
       <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=nTZQZ0EAAAAJ&amp;citation_for_view=nTZQZ0EAAAAJ:YsMSGLbcyi4C">DiMPLE: Disentangled Multi-Modal Prompt Learning: Enhancing Out-of-Distribution Alignment with Invariant and Spurious Feature Separation</a></h3>
@@ -371,7 +361,7 @@ footer {
   </article>
 
   <article class="pub">
-    <span class="venue">MICCAI-Worskhop<small>2025, UNSURE</small></span>
+    <span class="venue">MICCAI-Workshop<small>2025, UNSURE</small></span>
     <div>
       <h3><a href="https://openreview.net/forum?id=TT9tAH1XBW">Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift</a></h3>
       <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Mohammad Yaqub, Dwarikanath Mahapatra</p>
@@ -387,6 +377,8 @@ footer {
       <p class="summary">Uses language guidance to adapt classifiers to new medical domains without paired image-text data.</p>
     </div>
   </article>
+
+  <h4 class="year">2024</h4>
 
   <article class="pub">
     <span class="venue">MLHC<small>2024</small></span>
@@ -406,6 +398,8 @@ footer {
     </div>
   </article>
 
+  <h4 class="year">2019</h4>
+
   <article class="pub">
     <span class="venue">SIRS<small>2019</small></span>
     <div>
@@ -418,46 +412,45 @@ footer {
 </section>
 
 <section id="talks">
-  <h2>Talks</h2>
-  <ul class="rows">
-    <li><span class="when">2026</span><span><strong>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</strong><span class="sub">Seminar, Biomedical Informatics and Medical Education, University of Washington (virtual)</span></span></li>
-  </ul>
+  <h2>🎤 Talks</h2>
+  <table>
+    <tr><td class="when">2026</td><td><strong>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</strong><span class="sub">Seminar, Biomedical Informatics and Medical Education, University of Washington (virtual)</span></td></tr>
+  </table>
 </section>
 
 <section id="experience">
-  <h2>Experience</h2>
-  <ul class="rows">
-    <li><span class="when">2025 to now</span><span><strong>Postdoctoral Associate, NYU Abu Dhabi</strong><span class="sub">Clinical AI Lab, with Dr. Farah Shamout</span></span></li>
-    <li><span class="when">2024</span><span><strong>Research Intern, Inception Institute of AI (G42)</strong><span class="sub">Adaptive VLMs for healthcare and a tool for generating customized medical summaries. <a href="videos/Demo_Summarise_Generate_Report_PDF.mp4">Watch the demo</a></span></span></li>
-    <li><span class="when">2022</span><span><strong>Machine Learning Engineer and Instructor, Omdena</strong><span class="sub">Remote</span></span></li>
-    <li><span class="when">2020 to 2021</span><span><strong>Associate Systems Engineer, IBM</strong><span class="sub">Bengaluru, India</span></span></li>
-    <li><span class="when">2018 to 2019</span><span><strong>Guest Researcher, Bose Institute</strong><span class="sub">Division of Bioinformatics, Kolkata, India</span></span></li>
-  </ul>
+  <h2>💼 Experience</h2>
+  <table>
+    <tr><td class="when">2025 to now</td><td><strong>Postdoctoral Associate, NYU Abu Dhabi</strong><span class="sub">Clinical AI Lab, with Dr. Farah Shamout</span></td></tr>
+    <tr><td class="when">2024</td><td><strong>Research Intern, Inception Institute of AI (G42)</strong><span class="sub">Adaptive VLMs for healthcare and a tool for generating customized medical summaries. <a href="videos/Demo_Summarise_Generate_Report_PDF.mp4">Watch the demo</a></span></td></tr>
+    <tr><td class="when">2022</td><td><strong>Machine Learning Engineer and Instructor, Omdena</strong><span class="sub">Remote</span></td></tr>
+    <tr><td class="when">2020 to 2021</td><td><strong>Associate Systems Engineer, IBM</strong><span class="sub">Bengaluru, India</span></td></tr>
+    <tr><td class="when">2018 to 2019</td><td><strong>Guest Researcher, Bose Institute</strong><span class="sub">Division of Bioinformatics, Kolkata, India</span></td></tr>
+  </table>
 </section>
 
 <section id="education">
-  <h2>Education</h2>
-  <ul class="rows">
-    <li><span class="when">2021 to 2025</span><span><strong>PhD, Computer Vision</strong><span class="sub">Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi</span></span></li>
-    <li><span class="when">2017 to 2019</span><span><strong>M.Tech., Computer Science and Engineering</strong><span class="sub">University of Calcutta, Kolkata</span></span></li>
-    <li><span class="when">2015 to 2017</span><span><strong>M.Sc., Computer Science</strong><span class="sub">University of Calcutta, Kolkata</span></span></li>
-    <li><span class="when">2012 to 2015</span><span><strong>B.Sc., Computer Science</strong><span class="sub">St. Xavier's College, Kolkata</span></span></li>
-  </ul>
+  <h2>🎓 Education</h2>
+  <table>
+    <tr><td class="when">2021 to 2025</td><td><strong>PhD, Computer Vision</strong><span class="sub">Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi</span></td></tr>
+    <tr><td class="when">2017 to 2019</td><td><strong>M.Tech., Computer Science and Engineering</strong><span class="sub">University of Calcutta, Kolkata</span></td></tr>
+    <tr><td class="when">2015 to 2017</td><td><strong>M.Sc., Computer Science</strong><span class="sub">University of Calcutta, Kolkata</span></td></tr>
+    <tr><td class="when">2012 to 2015</td><td><strong>B.Sc., Computer Science</strong><span class="sub">St. Xavier's College, Kolkata</span></td></tr>
+  </table>
 </section>
 
 <section id="awards">
-  <h2>Honors and awards</h2>
-  <ul class="rows">
-    <li><span class="when">2022</span><span>SiemensWomenHackAI, first runner-up</span></li>
-    <li><span class="when">2022</span><span>CISCO Sustainability Challenge UAE, top 4 finalist</span></li>
-    <li><span class="when">2022</span><span>Innovation Challenge for Entrepreneurship, top 8 finalist</span></li>
-    <li><span class="when">2021</span><span>MENA Healthcare Hackathon, top 8 finalist</span></li>
-  </ul>
+  <h2>🏆 Honors and awards</h2>
+  <table>
+    <tr><td class="when">2022</td><td>SiemensWomenHackAI, first runner-up</td></tr>
+    <tr><td class="when">2022</td><td>CISCO Sustainability Challenge UAE, top 4 finalist</td></tr>
+    <tr><td class="when">2022</td><td>Innovation Challenge for Entrepreneurship, top 8 finalist</td></tr>
+    <tr><td class="when">2021</td><td>MENA Healthcare Hackathon, top 8 finalist</td></tr>
+  </table>
 </section>
 
 <footer>Last updated October 2026.</footer>
 
-</main>
 </div>
 </body>
 </html>
