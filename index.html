@@ -80,8 +80,8 @@ section { padding: 8px 0 40px; scroll-margin-top: 56px; }
 /* Header: intro left, photo right */
 header {
   display: grid;
-  grid-template-columns: 1fr 220px;
-  gap: 40px;
+  grid-template-columns: 1fr 170px;
+  gap: 8px 40px;
   align-items: start;
   padding: 48px 0 32px;
   scroll-margin-top: 56px;
@@ -96,6 +96,7 @@ h1 {
 .role { margin: 0 0 20px; color: var(--muted); font-size: 1rem; line-height: 1.45; }
 .lede { font-size: 1.25rem; line-height: 1.5; margin: 0 0 16px; }
 header p { margin: 0 0 14px; }
+.bio { grid-column: 1 / -1; }
 .photo img {
   display: block;
   width: 100%;
@@ -242,6 +243,11 @@ footer {
     <h1>Umaima Rahman</h1>
     <p class="role">Postdoctoral Associate, Clinical AI Lab, New York University Abu Dhabi</p>
     <p class="lede">👩‍💻 I build AI systems that can be trusted by clinicians: vision-language models that know where things are in a scan 🩻, and agents that can reason over a patient stay 🏥.</p>
+  </div>
+  <div class="photo">
+    <img src="images/portrait.jpg" alt="Portrait of Umaima Rahman" width="720" height="720">
+  </div>
+  <div class="bio">
     <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. 🎓 I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Mohammad Yaqub and Dr. Dwarikanath Mahapatra, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
     <p>Before my PhD I interned at the Inception Institute of AI (G42) and worked at IBM. 🤝 I am happy to talk about collaborations at the intersection of AI and healthcare!</p>
     <ul class="links">
@@ -250,9 +256,6 @@ footer {
       <li><a href="https://github.com/rumaima">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/umaima-rahman-ai">LinkedIn</a></li>
     </ul>
-  </div>
-  <div class="photo">
-    <img src="images/portrait.jpg" alt="Portrait of Umaima Rahman" width="720" height="720">
   </div>
 </header>
 
