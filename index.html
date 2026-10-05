@@ -9,9 +9,6 @@
 <meta property="og:description" content="Clinical AI researcher at NYU Abu Dhabi.">
 <meta property="og:image" content="images/portrait.jpg">
 <link rel="icon" href="images/portrait.jpg">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
 <style>
 :root {
   --paper: #ffffff;
@@ -38,11 +35,8 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font: 400 1.0625rem/1.65 "Source Serif 4", Georgia, serif;
+  font: 400 1.0625rem/1.6 "Trebuchet MS", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
   -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3, h4, nav, .venue, .when, .links a, summary {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
 }
 a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 a:hover { text-decoration-thickness: 2px; }
@@ -136,7 +130,6 @@ h2 {
 .themes ul { margin: 0; padding-left: 1.2em; }
 .themes ul li { margin-bottom: 4px; }
 .tagv {
-  font-family: "Bricolage Grotesque", system-ui, sans-serif;
   font-size: .82rem;
   font-weight: 600;
   color: var(--muted);
@@ -160,37 +153,28 @@ h2 {
 details summary { cursor: pointer; color: var(--accent); font-size: .92rem; margin-top: 10px; }
 
 /* Publications */
-.year {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--muted);
-  margin: 18px 0 4px;
+.year { font-size: 1.15rem; font-weight: 700; margin: 22px 0 6px; }
+.pub { margin: 0 0 22px; padding-left: 10px; }
+.pub h3 { font-size: 1.12rem; font-weight: 700; line-height: 1.35; margin: 0 0 2px; }
+.pub h3 a { text-decoration: none; }
+.pub h3 a:hover { text-decoration: underline; }
+.pub p { margin: 0; }
+.authors b { font-weight: 700; }
+.highlight { color: #c0392b; font-weight: 700; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+.tag { font-size: .88rem; padding: 3px 12px; border-radius: 999px; background: #eef0f2; color: #3d4450; }
+.tag.agents { background: #ece8fb; color: #4b3fa8; }
+.tag.vlm { background: #f3e6f7; color: #6b2f86; }
+.tag.bench { background: #e6f1fd; color: #2457a6; }
+.tag.ood { background: #e7f5ec; color: #23704a; }
+@media (prefers-color-scheme: dark) {
+  .highlight { color: #ff7b6b; }
+  .tag { background: #273246; color: #c9d1de; }
+  .tag.agents { background: #2e2a52; color: #c4bbff; }
+  .tag.vlm { background: #3a2645; color: #e2b8f2; }
+  .tag.bench { background: #1f3352; color: #a9c8ff; }
+  .tag.ood { background: #1d3a2b; color: #9fdcb8; }
 }
-.pub {
-  display: grid;
-  grid-template-columns: 128px 1fr;
-  gap: 18px;
-  padding: 14px 0;
-  border-top: 1px solid var(--line);
-}
-.year + .pub { border-top: 0; }
-.venue {
-  align-self: start;
-  justify-self: start;
-  font-size: .8rem;
-  font-weight: 600;
-  line-height: 1.25;
-  padding: 5px 8px;
-  border: 1.5px solid var(--ink);
-  border-radius: 3px;
-}
-.venue small { display: block; font-weight: 400; color: var(--muted); }
-.pub h3 { font-size: 1.05rem; font-weight: 600; line-height: 1.35; margin: 0 0 6px; }
-.pub h3 a { color: var(--ink); text-decoration: none; }
-.pub h3 a:hover { color: var(--accent); }
-.authors { margin: 0 0 6px; font-size: .97rem; color: var(--muted); }
-.authors b { color: var(--ink); font-weight: 600; }
-.summary { margin: 0; font-size: .95rem; }
 
 /* Tables for talks, experience, education, awards */
 table { width: 100%; border-collapse: collapse; }
@@ -215,7 +199,6 @@ footer {
   .photo { order: -1; max-width: 160px; }
   h1 { font-size: 2.2rem; }
   .lede { font-size: 1.15rem; }
-  .pub { grid-template-columns: 1fr; gap: 8px; }
   .news li { grid-template-columns: 1fr; gap: 0; }
   td.when { width: 92px; }
 }
@@ -324,93 +307,77 @@ footer {
 
   <h4 class="year">2026</h4>
 
-  <article class="pub">
-    <span class="venue">NeurIPS-Workshop<small>2026, LCFM</small></span>
-    <div>
-      <!-- TODO: add full author list and arXiv link once uploaded -->
-      <h3>Long Context Is Not Enough: An Empirical Case for Dynamic Context Management and Reasoning in ICU Clinical Decision-Support Agents</h3>
-      <p class="authors"><b>Umaima Rahman</b>, et al.</p>
-      <p class="summary">On MIMIC-IV, serialized ICU stays grow near-linearly with length of stay and spread across 1,300+ chart variables, so fixed windows and curated subsets discard most of the record. Feeding an LLM more raw context zero-shot does not improve mortality prediction, which makes the case for active context management in ICU agents.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <!-- TODO: add full author list and arXiv link once uploaded -->
+    <h3>Long Context Is Not Enough: An Empirical Case for Dynamic Context Management and Reasoning in ICU Clinical Decision-Support Agents</h3>
+    <p class="authors"><b>Umaima Rahman</b>, et al.</p>
+    <p>NeurIPS 2026 Workshop on Long-Context Foundation Models (LCFM)</p>
+    <div class="tags"><span class="tag agents">Agents</span><span class="tag">Long Context</span><span class="tag">ICU / EHR</span></div>
+  </div>
 
-  <article class="pub">
-    <span class="venue">ECCV-Workshop<small>2026, MedFMB</small></span>
-    <div>
-      <!-- TODO: replace with the exact title, author list and paper link -->
-      <h3>CheXSpatialVQA: evaluating spatial understanding of chest X-ray vision-language models</h3>
-      <p class="authors"><b>Umaima Rahman</b>, et al.</p>
-      <p class="summary">A spatial VQA benchmark of 4,530 radiologist-checked question-answer pairs and the CheXSpatialScore metric, used to evaluate 13 general and medical VLMs.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <!-- TODO: replace with the exact title, author list and paper link -->
+    <h3>CheXSpatialVQA: evaluating spatial understanding of chest X-ray vision-language models</h3>
+    <p class="authors"><b>Umaima Rahman</b>, et al.</p>
+    <p>ECCV 2026 Workshop (MedFMB)</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag bench">Benchmark</span><span class="tag">Spatial Reasoning</span></div>
+  </div>
 
-  <article class="pub">
-    <span class="venue">MICCAI<small>2026, early accept and Oral</small></span>
-    <div>
-      <h3><a href="https://arxiv.org/abs/2605.08787">Lost in Volume: The CT-SpatialVQA Benchmark for Evaluating Semantic-Spatial Understanding of 3D Medical Vision-Language Models</a></h3>
-      <p class="authors">Mashrafi Monon, <b>Umaima Rahman</b>, Asif Hanif, Numan Saeed, Mohammad Yaqub</p>
-      <p class="summary">9,077 clinically grounded QA pairs from 1,601 CT volumes and reports. Current 3D medical VLMs average about 34% on semantic-spatial questions, often below chance.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://arxiv.org/abs/2605.08787">Lost in Volume: The CT-SpatialVQA Benchmark for Evaluating Semantic-Spatial Understanding of 3D Medical Vision-Language Models</a></h3>
+    <p class="authors">Mashrafi Monon, <b>Umaima Rahman</b>, Asif Hanif, Numan Saeed, Mohammad Yaqub</p>
+    <p class="highlight">Early accept and Oral presentation.</p>
+    <p>MICCAI 2026</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag bench">Benchmark</span><span class="tag">Spatial Reasoning</span></div>
+  </div>
 
   <h4 class="year">2025</h4>
 
-  <article class="pub">
-    <span class="venue">ICCV<small>2025</small></span>
-    <div>
-      <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=nTZQZ0EAAAAJ&amp;citation_for_view=nTZQZ0EAAAAJ:YsMSGLbcyi4C">DiMPLE: Disentangled Multi-Modal Prompt Learning: Enhancing Out-of-Distribution Alignment with Invariant and Spurious Feature Separation</a></h3>
-      <p class="authors"><b>Umaima Rahman</b>, Mohammad Yaqub, Dwarikanath Mahapatra</p>
-      <p class="summary">Disentangles invariant and spurious features across image and text prompts, improving out-of-distribution alignment and robustness of vision-language models.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=nTZQZ0EAAAAJ&amp;citation_for_view=nTZQZ0EAAAAJ:YsMSGLbcyi4C">DiMPLE: Disentangled Multi-Modal Prompt Learning: Enhancing Out-of-Distribution Alignment with Invariant and Spurious Feature Separation</a></h3>
+    <p class="authors"><b>Umaima Rahman</b>, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+    <p>ICCV 2025</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag ood">OOD Generalization</span><span class="tag">Prompt Learning</span></div>
+  </div>
 
-  <article class="pub">
-    <span class="venue">MICCAI-Workshop<small>2025, UNSURE</small></span>
-    <div>
-      <h3><a href="https://openreview.net/forum?id=TT9tAH1XBW">Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift</a></h3>
-      <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Mohammad Yaqub, Dwarikanath Mahapatra</p>
-      <p class="summary">DRiFt separates clinically relevant features from spurious ones in image-text embeddings, improving few-shot adaptation of medical VLMs and cross-dataset generalization.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://openreview.net/forum?id=TT9tAH1XBW">Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift</a></h3>
+    <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+    <p>MICCAI 2025 Workshop (UNSURE)</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag ood">OOD Generalization</span><span class="tag">Few-Shot</span></div>
+  </div>
 
-  <article class="pub">
-    <span class="venue">ISBI<small>2025</small></span>
-    <div>
-      <h3><a href="https://arxiv.org/abs/2409.02729">Can language-guided unsupervised adaptation improve medical image classification using unpaired images and texts?</a></h3>
-      <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Boulbaba Ben Amor, Mohammad Yaqub, Dwarikanath Mahapatra</p>
-      <p class="summary">Uses language guidance to adapt classifiers to new medical domains without paired image-text data.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://arxiv.org/abs/2409.02729">Can language-guided unsupervised adaptation improve medical image classification using unpaired images and texts?</a></h3>
+    <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Boulbaba Ben Amor, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+    <p>ISBI 2025</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag ood">Domain Adaptation</span></div>
+  </div>
 
   <h4 class="year">2024</h4>
 
-  <article class="pub">
-    <span class="venue">MLHC<small>2024</small></span>
-    <div>
-      <h3><a href="https://arxiv.org/abs/2408.11493">XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays</a></h3>
-      <p class="authors"><b>Umaima Rahman</b>, Abhishek Basu, Muhammad Uzair Khattak, Aniq Ur Rahman</p>
-      <p class="summary">Studies how well knowledge of one chest disease transfers to unseen diseases in zero-shot classification.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://arxiv.org/abs/2408.11493">XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays</a></h3>
+    <p class="authors"><b>Umaima Rahman</b>, Abhishek Basu, Muhammad Uzair Khattak, Aniq Ur Rahman</p>
+    <p>MLHC 2024</p>
+    <div class="tags"><span class="tag vlm">VLM</span><span class="tag ood">Zero-Shot</span><span class="tag">Chest X-ray</span></div>
+  </div>
 
-  <article class="pub">
-    <span class="venue">EUVIP<small>2024</small></span>
-    <div>
-      <h3>MRIShift: Disentangled Representation Learning for 3D MRI Lesion Segmentation under Distributional Shifts</h3>
-      <p class="authors"><b>Umaima Rahman</b>, Guangyi Chen, Kun Zhang</p>
-      <p class="summary">Disentangled representations for lesion segmentation that hold up when scanner and site change.</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3>MRIShift: Disentangled Representation Learning for 3D MRI Lesion Segmentation under Distributional Shifts</h3>
+    <p class="authors"><b>Umaima Rahman</b>, Guangyi Chen, Kun Zhang</p>
+    <p>EUVIP 2024</p>
+    <div class="tags"><span class="tag ood">OOD Generalization</span><span class="tag">Segmentation</span></div>
+  </div>
 
   <h4 class="year">2019</h4>
 
-  <article class="pub">
-    <span class="venue">SIRS<small>2019</small></span>
-    <div>
-      <h3><a href="https://link.springer.com/chapter/10.1007/978-981-13-9042-5_10">Obstructive pulmonary disease prediction through heart structure analysis</a></h3>
-      <p class="authors"><b>Umaima Rahman</b>, P. Bhattacharya, Sudipto Saha</p>
-    </div>
-  </article>
+  <div class="pub">
+    <h3><a href="https://link.springer.com/chapter/10.1007/978-981-13-9042-5_10">Obstructive pulmonary disease prediction through heart structure analysis</a></h3>
+    <p class="authors"><b>Umaima Rahman</b>, P. Bhattacharya, Sudipto Saha</p>
+    <p>SIRS 2019</p>
+    <div class="tags"><span class="tag">Medical Imaging</span></div>
+  </div>
 
   <p>Full list on <a href="https://scholar.google.com/citations?user=nTZQZ0EAAAAJ&amp;hl=en">Google Scholar</a>.</p>
 </section>
