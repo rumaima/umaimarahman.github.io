@@ -292,8 +292,8 @@ footer {
 <main>
 
 <section id="about">
-  <p class="lede">I build AI systems that can be trusted at the bedside: vision-language models that know where things are in a scan, and agents that can reason over a whole ICU stay.</p>
-  <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Dwarikanath Mahapatra and Dr. Mohammad Yaqub, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
+  <p class="lede">I build AI systems that can be trusted by the clinicians: vision-language models that know where things are in a scan, and agents that can reason over a patient stay.</p>
+  <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Mohammad Yaqub and Dr. Dwarikanath Mahapatra, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
   <p>My current work focuses on:</p>
   <ul class="interests">
     <li><strong>Spatial understanding in medical VLMs.</strong> Benchmarks and metrics for whether models can localize findings in chest X-rays and CT volumes, not just name them.</li>
@@ -307,10 +307,14 @@ footer {
   <h2>News</h2>
   <ul class="news">
     <li><span class="when">2026.10</span><span>Invited talk at the University of Washington, Department of Biomedical Informatics and Medical Education: <em>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</em>.</span></li>
-    <li><span class="when">2026.09</span><span>Presented CheXSpatialVQA at ECCV 2026 in Malmö and CT-SpatialVQA at MICCAI 2026 in Strasbourg.</span></li>
+    <li><span class="when">2026.09</span><span>Presented CheXSpatialVQA at ECCV 2026 in Malmö</span></li>
+    <li><span class="when">2026.09</span><span>CT-SpatialVQA selected for Oral Presentation at MICCAI 2026 in Strasbourg.</span></li>
     <li><span class="when">2026.07</span><span>Attended the Oxford Machine Learning Summer School (OxML), MLx Health &amp; Bio track.</span></li>
     <li><span class="when">2026.05</span><span>CT-SpatialVQA early-accepted at MICCAI 2026. <a href="https://arxiv.org/abs/2605.08787">Preprint on arXiv</a>.</span></li>
     <li><span class="when">2025</span><span>Joined the Clinical AI Lab at NYU Abu Dhabi as a Postdoctoral Associate.</span></li>
+    <li><span class="when">2025.05</span><span>Presented DiMPLe at ICCV 2025 in Hawaii</span></li>
+    <li><span class="when">2025.05</span><span>Featured in <a href='https://gulfnews.com/uae/abu-dhabi-heres-how-mbzuais-indian-phd-student-is-solving-a-major-problem-in-medical-ai-1.500148227'>Gulf News</a> for my PhD work</span></li>
+    <li><span class="when">2025.05</span><span>Attended The ADIA Lab Explainable AI Summer School in Granada, Spain</span></li>
     <li><span class="when">2025.05</span><span>Completed my PhD in Computer Vision at MBZUAI.</span></li>
     <li><span class="when">2025</span><span>DRiFt accepted at MICCAI 2025 and language-guided adaptation paper accepted at ISBI 2025.</span></li>
   </ul>
@@ -318,7 +322,7 @@ footer {
     <summary>Earlier news</summary>
     <ul class="news">
       <li><span class="when">2024.09</span><span>Presented MRIShift at EUVIP 2024, Geneva.</span></li>
-      <li><span class="when">2024.08</span><span>XDT-CXR accepted at ML4H 2024.</span></li>
+      <li><span class="when">2024.08</span><span>XDT-CXR accepted at MLHC 2024.</span></li>
       <li><span class="when">2024.05</span><span>Started a summer internship at the Inception Institute of AI (G42), Abu Dhabi.</span></li>
       <li><span class="when">2022.09</span><span>First runner-up at SiemensWomenHackAI.</span></li>
       <li><span class="when">2021.08</span><span>Started my PhD in Computer Vision at MBZUAI.</span></li>
@@ -330,8 +334,17 @@ footer {
 <section id="publications">
   <h2>Publications</h2>
 
+    <article class="pub">
+    <span class="venue">NeurIPS-Workshop<small>2026, LCFM</small></span>
+    <div>
+      <!-- TODO: add full author list and arXiv link once uploaded -->
+      <h3>Long Context Is Not Enough: An Empirical Case for Dynamic Context Management and Reasoning in ICU Clinical Decision-Support Agents</h3>
+      <p class="authors"><b>Umaima Rahman</b>, et al.</p>
+            <p class="summary">On MIMIC-IV, serialized ICU stays grow near-linearly with length of stay and spread across 1,300+ chart variables, so fixed windows and curated subsets discard most of the record. Feeding an LLM more raw context zero-shot does not improve mortality prediction, which makes the case for active context management in ICU agents.</p> </div>
+  </article>
+
   <article class="pub">
-    <span class="venue">ECCV<small>2026</small></span>
+    <span class="venue">ECCV-Workshop<small>2026, MedFMB</small></span>
     <div>
       <!-- TODO: replace with the exact title, author list and paper link -->
       <h3>CheXSpatialVQA: evaluating spatial understanding of chest X-ray vision-language models</h3>
@@ -341,7 +354,7 @@ footer {
   </article>
 
   <article class="pub">
-    <span class="venue">MICCAI<small>2026, early accept</small></span>
+    <span class="venue">MICCAI<small>2026, early accept and Oral</small></span>
     <div>
       <h3><a href="https://arxiv.org/abs/2605.08787">Lost in Volume: The CT-SpatialVQA Benchmark for Evaluating Semantic-Spatial Understanding of 3D Medical Vision-Language Models</a></h3>
       <p class="authors">Mashrafi Monon, <b>Umaima Rahman</b>, Asif Hanif, Numan Saeed, Mohammad Yaqub</p>
@@ -349,8 +362,17 @@ footer {
     </div>
   </article>
 
+    <article class="pub">
+    <span class="venue">ICCV<small>2025</small></span>
+    <div>
+      <h3><a href="https://scholar.google.com/citations?view_op=view_citation&amp;hl=en&amp;user=nTZQZ0EAAAAJ&amp;citation_for_view=nTZQZ0EAAAAJ:YsMSGLbcyi4C">DiMPLE: Disentangled Multi-Modal Prompt Learning: Enhancing Out-of-Distribution Alignment with Invariant and Spurious Feature Separation</a></h3>
+      <p class="authors"><b>Umaima Rahman</b>, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+      <p class="summary">Disentangles invariant and spurious features across image and text prompts, improving out-of-distribution alignment and robustness of vision-language models.</p>
+    </div>
+  </article>
+
   <article class="pub">
-    <span class="venue">MICCAI<small>2025</small></span>
+    <span class="venue">MICCAI-Worskhop<small>2025, UNSURE</small></span>
     <div>
       <h3><a href="https://openreview.net/forum?id=TT9tAH1XBW">Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift</a></h3>
       <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Mohammad Yaqub, Dwarikanath Mahapatra</p>
@@ -368,7 +390,7 @@ footer {
   </article>
 
   <article class="pub">
-    <span class="venue">ML4H<small>2024</small></span>
+    <span class="venue">MLHC<small>2024</small></span>
     <div>
       <h3><a href="https://arxiv.org/abs/2408.11493">XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays</a></h3>
       <p class="authors"><b>Umaima Rahman</b>, Abhishek Basu, Muhammad Uzair Khattak, Aniq Ur Rahman</p>
@@ -408,7 +430,7 @@ footer {
   <ul class="rows">
     <li><span class="when">2025 to now</span><span><strong>Postdoctoral Associate, NYU Abu Dhabi</strong><span class="sub">Clinical AI Lab, with Dr. Farah Shamout</span></span></li>
     <li><span class="when">2024</span><span><strong>Research Intern, Inception Institute of AI (G42)</strong><span class="sub">Adaptive VLMs for healthcare and a tool for generating customized medical summaries. <a href="videos/Demo_Summarise_Generate_Report_PDF.mp4">Watch the demo</a></span></span></li>
-    <li><span class="when">2022</span><span><strong>Jr. Machine Learning Engineer and Instructor, Omdena</strong><span class="sub">Remote</span></span></li>
+    <li><span class="when">2022</span><span><strong>Machine Learning Engineer and Instructor, Omdena</strong><span class="sub">Remote</span></span></li>
     <li><span class="when">2020 to 2021</span><span><strong>Associate Systems Engineer, IBM</strong><span class="sub">Bengaluru, India</span></span></li>
     <li><span class="when">2018 to 2019</span><span><strong>Guest Researcher, Bose Institute</strong><span class="sub">Division of Bioinformatics, Kolkata, India</span></span></li>
   </ul>
