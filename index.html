@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Umaima Rahman</title>
+<meta name="description" content="Umaima Rahman, Postdoctoral Associate at NYU Abu Dhabi. Clinical AI, spatial understanding in medical vision-language models, and agents for ICU decision support.">
+<meta property="og:title" content="Umaima Rahman">
+<meta property="og:description" content="Clinical AI researcher at NYU Abu Dhabi.">
+<meta property="og:image" content="images/portrait.jpg">
+<link rel="icon" href="images/portrait.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f5f7fa;
+  --surface: #ffffff;
+  --ink: #17202e;
+  --muted: #5a6475;
+  --line: #dfe4ec;
+  --accent: #2447b8;
+  --box: #d99a00;
+  --box-ink: #1a1405;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f1520;
+    --surface: #161e2c;
+    --ink: #e6eaf0;
+    --muted: #9aa5b8;
+    --line: #273246;
+    --accent: #8fa8ff;
+    --box: #f2c14e;
+    --box-ink: #1a1405;
+  }
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 1.0625rem/1.65 "Source Serif 4", Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, nav, .tag, .venue, .when, .links a, .btn {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+}
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
+}
+
+/* Left column: identity */
+aside {
+  position: sticky;
+  top: 0;
+  align-self: start;
+  padding: 56px 0 40px;
+}
+.figure {
+  position: relative;
+  width: 100%;
+  max-width: 260px;
+  margin: 18px 0 32px;
+}
+.figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+/* The bounding box: a detection annotation drawn over the portrait */
+.bbox {
+  position: absolute;
+  left: 33%;
+  top: 9%;
+  width: 28%;
+  height: 36%;
+  border: 2px solid var(--box);
+  pointer-events: none;
+}
+.bbox .tag {
+  position: absolute;
+  left: -2px;
+  bottom: 100%;
+  background: var(--box);
+  color: var(--box-ink);
+  font-size: .72rem;
+  font-weight: 600;
+  line-height: 1;
+  padding: 4px 6px 3px;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .bbox { animation: draw .9s cubic-bezier(.2,.7,.2,1) .25s both; }
+  .bbox .tag { animation: fade .3s ease 1.05s both; }
+  @keyframes draw {
+    from { clip-path: inset(0 100% 100% 0); }
+    to { clip-path: inset(-30px -30px -30px -30px); }
+  }
+  @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+}
+
+h1 {
+  font-size: 2.6rem;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -.02em;
+  margin: 0 0 12px;
+}
+.role { margin: 0 0 4px; }
+.role, .place { color: var(--muted); font-size: .98rem; line-height: 1.45; }
+.place { margin: 0 0 24px; }
+.links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 28px; padding: 0; list-style: none; }
+.links a {
+  display: inline-block;
+  font-size: .85rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 6px 11px;
+  border-radius: 999px;
+}
+.links a:hover { border-color: var(--accent); color: var(--accent); }
+nav ul { list-style: none; margin: 0; padding: 0; }
+nav a {
+  display: block;
+  padding: 3px 0;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: .95rem;
+}
+nav a:hover { color: var(--ink); }
+
+/* Right column: content */
+main { padding: 56px 0 80px; min-width: 0; }
+section { padding: 8px 0 48px; scroll-margin-top: 24px; }
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--line);
+}
+.lede {
+  font-size: 1.35rem;
+  line-height: 1.5;
+  margin: 0 0 20px;
+  max-width: 34em;
+}
+main p, main li { max-width: 40em; }
+main .news li, main .rows li { max-width: none; }
+.interests { padding-left: 1.1em; margin: 0 0 16px; }
+.interests li { margin-bottom: 6px; }
+
+/* News */
+.news { list-style: none; margin: 0; padding: 0; }
+.news li {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 16px;
+  padding: 9px 0;
+  border-top: 1px solid var(--line);
+}
+.news li:first-child { border-top: 0; }
+.when {
+  color: var(--muted);
+  font-size: .88rem;
+  font-variant-numeric: tabular-nums;
+  padding-top: 3px;
+}
+details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  font-size: .92rem;
+  margin-top: 12px;
+}
+
+/* Publications */
+.pub {
+  display: grid;
+  grid-template-columns: 116px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+}
+.pub:first-of-type { border-top: 0; padding-top: 4px; }
+.venue {
+  align-self: start;
+  justify-self: start;
+  font-size: .8rem;
+  font-weight: 600;
+  line-height: 1.25;
+  padding: 5px 8px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+}
+.venue small { display: block; font-weight: 400; color: var(--muted); }
+.pub h3 {
+  font-size: 1.08rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0 0 6px;
+}
+.pub h3 a { color: var(--ink); text-decoration: none; }
+.pub h3 a:hover { color: var(--accent); }
+.authors { margin: 0 0 6px; font-size: .97rem; color: var(--muted); }
+.authors b { color: var(--ink); font-weight: 600; }
+.summary { margin: 0; font-size: .97rem; }
+
+/* Timelines */
+.rows { list-style: none; margin: 0; padding: 0; }
+.rows li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 16px;
+  padding: 10px 0;
+  border-top: 1px solid var(--line);
+}
+.rows li:first-child { border-top: 0; }
+.rows strong { font-weight: 600; }
+.rows span.sub { display: block; color: var(--muted); font-size: .95rem; }
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 20px 0 0;
+  color: var(--muted);
+  font-size: .88rem;
+}
+
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: 1fr; gap: 0; padding: 0 16px; }
+  aside { position: static; padding: 32px 0 8px; }
+  .figure { max-width: 200px; }
+  nav { display: none; }
+  main { padding-top: 24px; }
+  h1 { font-size: 2.2rem; }
+  .lede { font-size: 1.2rem; }
+  .pub { grid-template-columns: 1fr; gap: 10px; }
+  .news li, .rows li { grid-template-columns: 1fr; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<aside>
+  <div class="figure">
+    <img src="images/portrait.jpg" alt="Portrait of Umaima Rahman" width="720" height="720">
+    <div class="bbox" aria-hidden="true"><span class="tag">researcher 0.99</span></div>
+  </div>
+  <h1>Umaima Rahman</h1>
+  <p class="role">Postdoctoral Associate, Clinical AI Lab</p>
+  <p class="place">New York University Abu Dhabi</p>
+  <ul class="links">
+    <li><a href="mailto:ur2068@nyu.edu">Email</a></li>
+    <li><a href="https://scholar.google.com/citations?user=nTZQZ0EAAAAJ&amp;hl=en">Scholar</a></li>
+    <li><a href="https://github.com/rumaima">GitHub</a></li>
+    <li><a href="https://www.linkedin.com/in/umaima-rahman-ai">LinkedIn</a></li>
+    <li><a href="https://www.researchgate.net/profile/Umaima-Rahman">ResearchGate</a></li>
+  </ul>
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#awards">Awards</a></li>
+    </ul>
+  </nav>
+</aside>
+
+<main>
+
+<section id="about">
+  <p class="lede">I build AI systems that can be trusted at the bedside: vision-language models that know where things are in a scan, and agents that can reason over a whole ICU stay.</p>
+  <p>I am a Postdoctoral Associate in the <a href="https://nyuad.nyu.edu/en/academics/divisions/engineering/faculty/farah-emad-shamout.html">Clinical AI Lab</a> at NYU Abu Dhabi, working with Dr. Farah Shamout. I completed my PhD in <a href="https://mbzuai.ac.ae/research/department/computer-vision-department/">Computer Vision at MBZUAI</a>, advised by Dr. Dwarikanath Mahapatra and Dr. Mohammad Yaqub, where I worked on domain generalization and out-of-distribution robustness for medical imaging.</p>
+  <p>My current work focuses on:</p>
+  <ul class="interests">
+    <li><strong>Spatial understanding in medical VLMs.</strong> Benchmarks and metrics for whether models can localize findings in chest X-rays and CT volumes, not just name them.</li>
+    <li><strong>Agents for ICU decision support.</strong> Long-context management for LLM agents that read entire ICU stays from MIMIC-IV, and multi-agent systems that combine EHR and imaging.</li>
+    <li><strong>Robustness and generalization.</strong> Distribution shift, zero-shot transfer, and test-time adaptation in vision-language models.</li>
+  </ul>
+  <p>Before my PhD I interned at the Inception Institute of AI (G42) and worked at IBM. I am happy to talk about collaborations at the intersection of AI and healthcare.</p>
+</section>
+
+<section id="news">
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="when">2026.10</span><span>Invited talk at the University of Washington, Department of Biomedical Informatics and Medical Education: <em>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</em>.</span></li>
+    <li><span class="when">2026.09</span><span>Presented CheXSpatialVQA at ECCV 2026 in Malmö and CT-SpatialVQA at MICCAI 2026 in Strasbourg.</span></li>
+    <li><span class="when">2026.07</span><span>Attended the Oxford Machine Learning Summer School (OxML), MLx Health &amp; Bio track.</span></li>
+    <li><span class="when">2026.05</span><span>CT-SpatialVQA early-accepted at MICCAI 2026. <a href="https://arxiv.org/abs/2605.08787">Preprint on arXiv</a>.</span></li>
+    <li><span class="when">2025</span><span>Joined the Clinical AI Lab at NYU Abu Dhabi as a Postdoctoral Associate.</span></li>
+    <li><span class="when">2025.05</span><span>Completed my PhD in Computer Vision at MBZUAI.</span></li>
+    <li><span class="when">2025</span><span>DRiFt accepted at MICCAI 2025 and language-guided adaptation paper accepted at ISBI 2025.</span></li>
+  </ul>
+  <details>
+    <summary>Earlier news</summary>
+    <ul class="news">
+      <li><span class="when">2024.09</span><span>Presented MRIShift at EUVIP 2024, Geneva.</span></li>
+      <li><span class="when">2024.08</span><span>XDT-CXR accepted at ML4H 2024.</span></li>
+      <li><span class="when">2024.05</span><span>Started a summer internship at the Inception Institute of AI (G42), Abu Dhabi.</span></li>
+      <li><span class="when">2022.09</span><span>First runner-up at SiemensWomenHackAI.</span></li>
+      <li><span class="when">2021.08</span><span>Started my PhD in Computer Vision at MBZUAI.</span></li>
+      <li><span class="when">2020.01</span><span>Joined IBM as an Associate Systems Engineer in Bengaluru.</span></li>
+    </ul>
+  </details>
+</section>
+
+<section id="publications">
+  <h2>Publications</h2>
+
+  <article class="pub">
+    <span class="venue">ECCV<small>2026</small></span>
+    <div>
+      <!-- TODO: replace with the exact title, author list and paper link -->
+      <h3>CheXSpatialVQA: evaluating spatial understanding of chest X-ray vision-language models</h3>
+      <p class="authors"><b>Umaima Rahman</b>, et al.</p>
+      <p class="summary">A spatial VQA benchmark of 4,530 radiologist-checked question-answer pairs and the CheXSpatialScore metric, used to evaluate 13 general and medical VLMs.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">MICCAI<small>2026, early accept</small></span>
+    <div>
+      <h3><a href="https://arxiv.org/abs/2605.08787">Lost in Volume: The CT-SpatialVQA Benchmark for Evaluating Semantic-Spatial Understanding of 3D Medical Vision-Language Models</a></h3>
+      <p class="authors">Mashrafi Monon, <b>Umaima Rahman</b>, Asif Hanif, Numan Saeed, Mohammad Yaqub</p>
+      <p class="summary">9,077 clinically grounded QA pairs from 1,601 CT volumes and reports. Current 3D medical VLMs average about 34% on semantic-spatial questions, often below chance.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">MICCAI<small>2025</small></span>
+    <div>
+      <h3><a href="https://openreview.net/forum?id=TT9tAH1XBW">Decoupling Clinical and Class-Agnostic Features for Reliable Few-Shot Adaptation under Shift</a></h3>
+      <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+      <p class="summary">DRiFt separates clinically relevant features from spurious ones in image-text embeddings, improving few-shot adaptation of medical VLMs and cross-dataset generalization.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">ISBI<small>2025</small></span>
+    <div>
+      <h3><a href="https://arxiv.org/abs/2409.02729">Can language-guided unsupervised adaptation improve medical image classification using unpaired images and texts?</a></h3>
+      <p class="authors"><b>Umaima Rahman</b>, Raza Imam, Boulbaba Ben Amor, Mohammad Yaqub, Dwarikanath Mahapatra</p>
+      <p class="summary">Uses language guidance to adapt classifiers to new medical domains without paired image-text data.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">ML4H<small>2024</small></span>
+    <div>
+      <h3><a href="https://arxiv.org/abs/2408.11493">XDT-CXR: Investigating Cross-Disease Transferability in Zero-Shot Binary Classification of Chest X-Rays</a></h3>
+      <p class="authors"><b>Umaima Rahman</b>, Abhishek Basu, Muhammad Uzair Khattak, Aniq Ur Rahman</p>
+      <p class="summary">Studies how well knowledge of one chest disease transfers to unseen diseases in zero-shot classification.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">EUVIP<small>2024</small></span>
+    <div>
+      <h3>MRIShift: Disentangled Representation Learning for 3D MRI Lesion Segmentation under Distributional Shifts</h3>
+      <p class="authors"><b>Umaima Rahman</b>, Guangyi Chen, Kun Zhang</p>
+      <p class="summary">Disentangled representations for lesion segmentation that hold up when scanner and site change.</p>
+    </div>
+  </article>
+
+  <article class="pub">
+    <span class="venue">SIRS<small>2019</small></span>
+    <div>
+      <h3><a href="https://link.springer.com/chapter/10.1007/978-981-13-9042-5_10">Obstructive pulmonary disease prediction through heart structure analysis</a></h3>
+      <p class="authors"><b>Umaima Rahman</b>, P. Bhattacharya, Sudipto Saha</p>
+    </div>
+  </article>
+
+  <p>Full list on <a href="https://scholar.google.com/citations?user=nTZQZ0EAAAAJ&amp;hl=en">Google Scholar</a>.</p>
+</section>
+
+<section id="talks">
+  <h2>Talks</h2>
+  <ul class="rows">
+    <li><span class="when">2026</span><span><strong>Improving Spatial Understanding in Multimodal Models for Clinical Modalities</strong><span class="sub">Seminar, Biomedical Informatics and Medical Education, University of Washington (virtual)</span></span></li>
+  </ul>
+</section>
+
+<section id="experience">
+  <h2>Experience</h2>
+  <ul class="rows">
+    <li><span class="when">2025 to now</span><span><strong>Postdoctoral Associate, NYU Abu Dhabi</strong><span class="sub">Clinical AI Lab, with Dr. Farah Shamout</span></span></li>
+    <li><span class="when">2024</span><span><strong>Research Intern, Inception Institute of AI (G42)</strong><span class="sub">Adaptive VLMs for healthcare and a tool for generating customized medical summaries. <a href="videos/Demo_Summarise_Generate_Report_PDF.mp4">Watch the demo</a></span></span></li>
+    <li><span class="when">2022</span><span><strong>Jr. Machine Learning Engineer and Instructor, Omdena</strong><span class="sub">Remote</span></span></li>
+    <li><span class="when">2020 to 2021</span><span><strong>Associate Systems Engineer, IBM</strong><span class="sub">Bengaluru, India</span></span></li>
+    <li><span class="when">2018 to 2019</span><span><strong>Guest Researcher, Bose Institute</strong><span class="sub">Division of Bioinformatics, Kolkata, India</span></span></li>
+  </ul>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <ul class="rows">
+    <li><span class="when">2021 to 2025</span><span><strong>PhD, Computer Vision</strong><span class="sub">Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi</span></span></li>
+    <li><span class="when">2017 to 2019</span><span><strong>M.Tech., Computer Science and Engineering</strong><span class="sub">University of Calcutta, Kolkata</span></span></li>
+    <li><span class="when">2015 to 2017</span><span><strong>M.Sc., Computer Science</strong><span class="sub">University of Calcutta, Kolkata</span></span></li>
+    <li><span class="when">2012 to 2015</span><span><strong>B.Sc., Computer Science</strong><span class="sub">St. Xavier's College, Kolkata</span></span></li>
+  </ul>
+</section>
+
+<section id="awards">
+  <h2>Honors and awards</h2>
+  <ul class="rows">
+    <li><span class="when">2022</span><span>SiemensWomenHackAI, first runner-up</span></li>
+    <li><span class="when">2022</span><span>CISCO Sustainability Challenge UAE, top 4 finalist</span></li>
+    <li><span class="when">2022</span><span>Innovation Challenge for Entrepreneurship, top 8 finalist</span></li>
+    <li><span class="when">2021</span><span>MENA Healthcare Hackathon, top 8 finalist</span></li>
+  </ul>
+</section>
+
+<footer>Last updated October 2026.</footer>
+
+</main>
+</div>
+</body>
+</html>
