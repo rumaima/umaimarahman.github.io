@@ -411,7 +411,7 @@ footer {
   <table>
     <tr><td class="when">2021 to 2025</td><td><strong>PhD, Computer Vision</strong><span class="sub">Mohamed bin Zayed University of Artificial Intelligence, Abu Dhabi</span></td></tr>
     <tr><td class="when">2017 to 2019</td><td><strong>M.Tech., Computer Science and Engineering</strong><span class="sub">University of Calcutta, Kolkata</span></td></tr>
-    <tr><td class="when">2015 to 2017</td><td><strong>M.Sc., Computer Science</strong><span class="sub">University of Calcutta, Kolkata</span></td></tr>
+    <tr><td class="when">2015 to 2017</td><td><strong>M.Sc., Computer and Information Science</strong><span class="sub">University of Calcutta, Kolkata</span></td></tr>
     <tr><td class="when">2012 to 2015</td><td><strong>B.Sc., Computer Science</strong><span class="sub">St. Xavier's College, Kolkata</span></td></tr>
   </table>
 </section>
@@ -423,10 +423,21 @@ footer {
     <tr><td class="when">2022</td><td>CISCO Sustainability Challenge UAE, top 4 finalist</td></tr>
     <tr><td class="when">2022</td><td>Innovation Challenge for Entrepreneurship, top 8 finalist</td></tr>
     <tr><td class="when">2021</td><td>MENA Healthcare Hackathon, top 8 finalist</td></tr>
+    <tr><td class="when">2017</td><td>Qualified for the post of Assistant Professor through the National Eligibility Test (NET-UGC)</td></tr>
+    <tr><td class="when">2017</td><td>National Rank 2415, top 2% of candidates in the Graduate Aptitude Test in Engineering (GATE), India</td></tr>
+    <tr><td class="when">2015</td><td>Hackathon, 1st prize<span class="sub">University of Calcutta, Kolkata</span></td></tr>
+    <tr><td class="when">2015</td><td>EDC Business Plan Competition, 1st prize<span class="sub">St.Xavier's College, Kolkata</span></td></tr>
+    <tr><td class="when">2014</td><td>Business Plan Competition, 3rd prize<span class="sub">Jyoti Nivas College, Bangalore</span></td></tr>
+    <tr><td class="when">2014</td><td>Robotics Competition, 1st prize<span class="sub">Techno India College, Kolkata</span></td></tr>
+    <tr><td class="when">2014</td><td>Robotics Competition, 1st prize<span class="sub">IIEST, Shibpur</span></td></tr>
   </table>
 </section>
 
-<footer>Last updated October 2026.</footer>
+<footer>Last updated <span id="updated"></span>.</footer>
+<script>
+  document.getElementById('updated').textContent =
+    new Date(document.lastModified).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+</script>
 
 </div>
 </body>
