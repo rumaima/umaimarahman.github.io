@@ -202,6 +202,7 @@ footer {
   .news li { grid-template-columns: 1fr; gap: 0; }
   td.when { width: 92px; }
 }
+video.vision { display: block; width: 100%; height: auto; border-radius: 10px; border: 1px solid var(--line); background: #fff; }
 </style>
 </head>
 <body>
@@ -209,6 +210,7 @@ footer {
 <nav aria-label="Sections">
   <ul>
     <li><a href="#home">Home</a></li>
+    <li><a href="#vision">Vision</a></li>
     <li><a href="#research">Research</a></li>
     <li><a href="#news">News</a></li>
     <li><a href="#publications">Publications</a></li>
@@ -240,6 +242,14 @@ footer {
     </ul>
   </div>
 </header>
+
+<section id="vision">
+  <h2>🎬 Research vision</h2>
+  <video class="vision" controls preload="metadata" playsinline poster="images/video_poster.jpg">
+    <source src="videos/trustworthy_clinical_ai.mp4" type="video/mp4">
+    Your browser does not support embedded video. <a href="videos/trustworthy_clinical_ai.mp4">Download the video</a>.
+  </video>
+</section>
 
 <section id="research">
   <h2>🔬 Research highlights</h2>
